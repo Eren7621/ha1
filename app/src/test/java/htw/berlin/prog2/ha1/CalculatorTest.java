@@ -90,5 +90,23 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
+
+    @Test
+    @DisplayName("should display positive result after multiplying two negative numbers")
+    void testMultiplicationOfTwoNegativeNumbers() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(2);
+        calc.pressNegativeKey(); // Mache die erste Zahl negativ
+        calc.pressBinaryOperationKey("x"); // Multiplikationsoperation
+        calc.pressDigitKey(3);
+        calc.pressNegativeKey(); // Mache die zweite Zahl negativ
+        calc.pressEqualsKey(); // Berechnen
+
+        String expected = "6"; // Das Ergebnis der Multiplikation von -2 und -3 ist 6
+        String actual = calc.readScreen(); // Lese den Bildschirminhalt
+
+        assertEquals(expected, actual);
+    }
 }
 
