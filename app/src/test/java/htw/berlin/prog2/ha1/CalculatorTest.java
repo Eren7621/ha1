@@ -91,22 +91,44 @@ class CalculatorTest {
 
     //TODO hier weitere Tests erstellen
 
+
     @Test
     @DisplayName("should display positive result after multiplying two negative numbers")
     void testMultiplicationOfTwoNegativeNumbers() {
         Calculator calc = new Calculator();
 
         calc.pressDigitKey(2);
-        calc.pressNegativeKey(); // Mache die erste Zahl negativ
-        calc.pressBinaryOperationKey("x"); // Multiplikationsoperation
+        calc.pressNegativeKey();
+        calc.pressBinaryOperationKey("x");
         calc.pressDigitKey(3);
-        calc.pressNegativeKey(); // Mache die zweite Zahl negativ
-        calc.pressEqualsKey(); // Berechnen
+        calc.pressNegativeKey();
+        calc.pressEqualsKey();
 
-        String expected = "6"; // Das Ergebnis der Multiplikation von -2 und -3 ist 6
-        String actual = calc.readScreen(); // Lese den Bildschirminhalt
+        String expected = "6";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    @DisplayName("Test für die Addition von mehreren Zahlen")
+    void testAddierenVonMehrerenZahlen() {
+        Calculator calc = new Calculator();
+        calc.pressDigitKey(5);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(5);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(5);
+        calc.pressEqualsKey();
+
+        String expected = "15";
+        String actual = calc.readScreen();
 
         assertEquals(expected, actual);
     }
 }
+
+
+
 
