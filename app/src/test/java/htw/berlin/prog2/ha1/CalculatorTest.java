@@ -112,17 +112,17 @@ class CalculatorTest {
 
 
     @Test
-    @DisplayName("Test für die Addition von mehreren Zahlen")
-    void testAddierenVonMehrerenZahlen() {
+    @DisplayName("soll beim benutzen mehrerer Operatoren dass Zwischenergebnis anzeigen")
+    void testAnzeigenVomZwischenergebnis() {
         Calculator calc = new Calculator();
         calc.pressDigitKey(5);
         calc.pressBinaryOperationKey("+");
         calc.pressDigitKey(5);
         calc.pressBinaryOperationKey("+");
-        calc.pressDigitKey(5);
-        calc.pressEqualsKey();
 
-        String expected = "15";
+
+
+        String expected = "10";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
