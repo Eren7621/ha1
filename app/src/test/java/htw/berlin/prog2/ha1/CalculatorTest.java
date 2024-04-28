@@ -132,7 +132,6 @@ class CalculatorTest {
     void testZwischenergebnisNachDerClearTaste() {
         Calculator calc = new Calculator();
 
-        // Erstes Zwischenergebnis
         calc.pressDigitKey(5);
         calc.pressBinaryOperationKey("+");
         calc.pressDigitKey(5);
