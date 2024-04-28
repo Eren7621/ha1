@@ -93,7 +93,7 @@ class CalculatorTest {
 
 
     @Test
-    @DisplayName("should display positive result after multiplying two negative numbers")
+    @DisplayName("soll beim multiplizieren von zwei negativen Zahlen, ein positives Ergebnis ausgeben")
     void testMultiplicationOfTwoNegativeNumbers() {
         Calculator calc = new Calculator();
 
@@ -112,7 +112,7 @@ class CalculatorTest {
 
 
     @Test
-    @DisplayName("soll beim benutzen mehrerer Operatoren dass Zwischenergebnis anzeigen")
+    @DisplayName("soll beim benutzen von mehreren Operatoren, dass Zwischenergebnis anzeigen")
     void testAnzeigenVomZwischenergebnis() {
         Calculator calc = new Calculator();
         calc.pressDigitKey(5);
@@ -121,14 +121,37 @@ class CalculatorTest {
         calc.pressBinaryOperationKey("+");
 
 
-
         String expected = "10";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
     }
-}
 
+    @Test
+    @DisplayName("testet ob das Zwischenergebnis auch nach der Clear Taste bestehen bleibt")
+    void testZwischenergebnisNachDerClearTaste() {
+        Calculator calc = new Calculator();
+
+        // Erstes Zwischenergebnis
+        calc.pressDigitKey(5);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(5);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(5);
+        calc.pressClearKey();
+
+
+        String expected = "0";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+
+        calc.pressEqualsKey();
+        String ExpectedAfterEqual = "10";
+        String ActualAfterEqual = calc.readScreen();
+        assertEquals(ExpectedAfterEqual, ActualAfterEqual);
+    }
+}
 
 
 
