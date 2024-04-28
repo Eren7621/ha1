@@ -144,7 +144,6 @@ public class Calculator {
      */
     public void pressEqualsKey() {
 
-        // Keine Operation durchgeführt, daher nichts zu tun
         var result = switch (latestOperation) {
             case "+" -> latestValue + Double.parseDouble(screen);
             case "-" -> latestValue - Double.parseDouble(screen);
