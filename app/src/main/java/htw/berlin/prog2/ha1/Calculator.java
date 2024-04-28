@@ -51,7 +51,7 @@ public class Calculator {
                 screen = screen.substring(0, screen.length() - 1);
                 pressEqualsKey();
                 latestValue = Double.parseDouble(screen);
-                screen = "0";
+
             }
             else{
                 if (screen.equals("0")) {
