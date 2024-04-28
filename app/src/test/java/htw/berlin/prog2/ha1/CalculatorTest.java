@@ -128,7 +128,7 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("testet ob das Zwischenergebnis auch nach der Clear Taste bestehen bleibt")
+    @DisplayName(" testet ob das Zwischenergebnis auch nach der Clear Taste bestehen bleibt")
     void testZwischenergebnisNachDerClearTaste() {
         Calculator calc = new Calculator();
 
