@@ -94,7 +94,7 @@ class CalculatorTest {
 
     @Test
     @DisplayName("soll beim multiplizieren von zwei negativen Zahlen, ein positives Ergebnis ausgeben")
-    void testMultiplicationOfTwoNegativeNumbers() {
+    void testMultiplizierenVonZweiNegativenZahlen() {
         Calculator calc = new Calculator();
 
         calc.pressDigitKey(2);
